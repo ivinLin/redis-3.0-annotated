@@ -79,19 +79,19 @@ static inline size_t sdsavail(const sds s) {
     return sh->free;
 }
 
-sds sdsnewlen(const void *init, size_t initlen);
-sds sdsnew(const char *init);
-sds sdsempty(void);
+sds sdsnewlen(const void *init, size_t initlen);  //分配规定长度的空间
+sds sdsnew(const char *init);  //重新分配空间
+sds sdsempty(void); //清空内存
 size_t sdslen(const sds s);
 sds sdsdup(const sds s);
 void sdsfree(sds s);
 size_t sdsavail(const sds s);
 sds sdsgrowzero(sds s, size_t len);
 sds sdscatlen(sds s, const void *t, size_t len);
-sds sdscat(sds s, const char *t);
+sds sdscat(sds s, const char *t); //将内容存储增加到原有空间上
 sds sdscatsds(sds s, const sds t);
 sds sdscpylen(sds s, const char *t, size_t len);
-sds sdscpy(sds s, const char *t);
+sds sdscpy(sds s, const char *t); //将内容拷贝到字符串空间上
 
 sds sdscatvprintf(sds s, const char *fmt, va_list ap);
 #ifdef __GNUC__
